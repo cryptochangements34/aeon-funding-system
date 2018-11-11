@@ -36,9 +36,6 @@
                 <br>
                 <span>
                     Target: <b>{{proposal.funds_target|round}}</b> MSR
-                     {% if proposal.funds_target_usd %}
-                    <small>➞ {{proposal.funds_target_usd}} USD</small>
-                    {% endif %}
                 </span>
                 {% endif %}
             </p>
@@ -66,10 +63,6 @@
                                                 <td>Target</td>
                                                 <td>
                                                     <span class="badge">{{proposal.funds_target|round}} MSR
-                                                     {% if proposal.funds_target_usd %}
-                                                    <small>➞ {{proposal.funds_target_usd}} USD</small>
-                                                    {% endif %}
-                                                    </span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -167,11 +160,6 @@
                             <a target="_blank" href="https://msrchain.net/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
                             <span style="float:right;color:#008926;font-weight:bold;">
                                 + {{tx['amount_human']|round(2)}} MSR
-                                {% if 'amount_usd' in tx %}
-                                <small style="color: black">
-                                    ➞ $ {{tx['amount_usd']}}
-                                </small>
-                                {% endif %}
                             </span>
                         </li>
                         {% endfor %}
@@ -199,11 +187,6 @@
                             <a target="_blank" href="https://msrchain.net/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
                             <span style="float:right;color:#890000;font-weight:bold;">
                                 - {{tx['amount_human']|round(2)}} MSR
-                                {% if 'amount_usd' in tx %}
-                                <small style="color: black">
-                                    ➞ $ {{tx['amount_usd']}}
-                                </small>
-                                {% endif %}
                             </span>
                         </li>
                         {% endfor %}
