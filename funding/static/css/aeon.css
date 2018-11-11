@@ -111,7 +111,7 @@ body {
 }
 
 .bg-dark {
-   background: linear-gradient(90deg, #164450, #5fbcd3);
+   background: linear-gradient(90deg, #164450, #4CB860);
    margin-bottom: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -238,7 +238,7 @@ a {
 .btn-primary:hover{
     color: #fff;
     background-color: #1e7e34;
-    border-color: #1c7430;
+    border-color: #1e7e34;
 }
 
 .card-body {
@@ -257,7 +257,7 @@ a {
     font-size: 16px;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
-    background: linear-gradient(90deg, #17455129, #5bb5cc69);
+    background: linear-gradient(90deg, #17455129, #4CB860);
     /*background: linear-gradient(90deg, #40d61e1f, #ffa93e69);*/
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     border-bottom: 1px solid #e6e6e6;

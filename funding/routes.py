@@ -158,8 +158,8 @@ def proposal_api_add(title, content, pid, funds_target, addr_receiving, category
             return make_response(jsonify('letters detected'),500)
         if funds_target < 1:
                 return make_response(jsonify('Proposal asking less than 1 error :)'), 500)
-        if len(addr_receiving) != 97:
-            return make_response(jsonify('Faulty address, should be of length 72'), 500)
+        if len(addr_receiving) != 95:
+            return make_response(jsonify('Faulty address, should be of length 95'), 500)
 
         p = Proposal(headline=title, content=content, category='misc', user=current_user)
         proposalID = current_user
