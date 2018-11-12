@@ -28,11 +28,14 @@ Run a masari node
 
 Create a view-only masari wallet for this project
 `./masari-wallet-cli -- generate-from-view-key funding`
+
 Standard address: `5me2m9HZgrr38Tn9JgSee84nuzf6sS2ms29yqWXLXDQQ4A1QYzZs1BjPhXi4X2HcCgLXQrc2sZuML6A4ihmWAvQ7BXCnaaQ`
+
 View-key: `a7bcbaf962cda3dac09db13b1679107a29a45b5973d9dfcbed0eaa7bf3f91e0c`
 
 If necessary, create a new postgres user for this project
 Create a database for the funding system in postgres
+
 `CREATE DATABASE funding;`
 
 Run an RPC wallet using this view-only wallet
