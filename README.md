@@ -1,10 +1,10 @@
-# AEON Funding System 
+# Masari Funding System 
 
 ## Description
 
-Do more with your cryptocurrency by getting the community involved. The goal of the AEON Funding System is to enable community members to complete projects and be paid for the projects by other community members. 
+A forum style funding system for Masari currency
 
-The AEON Funding System was written entirely in Python. It was originally developed by dsc_ (skftn) for the Wownero currency but later updated by various community members to be accepted for AEON and other cryptonote currencies. 
+Written in Python using Flask originally by dsc (skftn) with contributions from camthegeek
 
 ## Features
 - Simplistic user system
@@ -19,29 +19,32 @@ The AEON Funding System was written entirely in Python. It was originally develo
 
 ## Installation (locally)
 
-Better instructions to follow in the future.
-
 ### Install dependancies
 
 ```sudo apt install python-virtualenv python3 redis-server postgresql-server-dev-* postgresql postgresql-client python-pip virtualenv git```
 
-Create a Postgres user/database for this project
+Run a masari node
+`./masarid`
+
+Create a view-only masari wallet for this project
+`./masari-wallet-cli -- generate-from-view-key funding`
+Standard address: `5me2m9HZgrr38Tn9JgSee84nuzf6sS2ms29yqWXLXDQQ4A1QYzZs1BjPhXi4X2HcCgLXQrc2sZuML6A4ihmWAvQ7BXCnaaQ`
+View-key: `a7bcbaf962cda3dac09db13b1679107a29a45b5973d9dfcbed0eaa7bf3f91e0c`
+
+If necessary, create a new postgres user for this project
+Create a database for the funding system in postgres
+`CREATE DATABASE funding;`
+
+Run an RPC wallet using this view-only wallet
+`./masari-wallet-rpc --rpc-bind-port 11182 --disable-rpc-login --wallet-file funding --password "your_wallet_password"`
 
 ```
-git clone https://github.com/camthegeek/aeon-funding-system.git
-cd aeon-funding-system
-virtualenv -p /usr/bin/python3 <venv>
-source <venv>/bin/activate
+git clone https://github.com/masari-project/masari-funding-system.git
+cd masari-funding-system
+virtualenv -p /usr/bin/python3 env
+source env/bin/activate
 pip install -r requirements.txt
 cp settings.py_example settings.py
-- change settings accordingly
+- change settings.py accordingly
 python run_dev.py
 ```
-
-### to-do
-
-- [] rate limit posting of proposals per user
-- [x] Define coin variable
-- [] Define one exchange API URL
-- [] Automated setup
-- [] User follow proposals
