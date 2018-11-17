@@ -26,12 +26,9 @@ Written in Python using Flask originally by dsc (skftn) with contributions from 
 Run a masari node
 `./masarid`
 
-Create a view-only masari wallet for this project
-`./masari-wallet-cli -- generate-from-view-key funding`
+Create the file wallet.json with the following contents
 
-Standard address: `5me2m9HZgrr38Tn9JgSee84nuzf6sS2ms29yqWXLXDQQ4A1QYzZs1BjPhXi4X2HcCgLXQrc2sZuML6A4ihmWAvQ7BXCnaaQ`
-
-View-key: `a7bcbaf962cda3dac09db13b1679107a29a45b5973d9dfcbed0eaa7bf3f91e0c`
+`{"version":1, "filename":"funding","scan_from_height":0,"password":"set_password","viewkey":"a7bcbaf962cda3dac09db13b1679107a29a45b5973d9dfcbed0eaa7bf3f91e0c","address":"5me2m9HZgrr38Tn9JgSee84nuzf6sS2ms29yqWXLXDQQ4A1QYzZs1BjPhXi4X2HcCgLXQrc2sZuML6A4ihmWAvQ7BXCnaaQ"}`
 
 If necessary, create a new postgres user for this project
 Create a database for the funding system in postgres
@@ -39,7 +36,7 @@ Create a database for the funding system in postgres
 `CREATE DATABASE funding;`
 
 Run an RPC wallet using this view-only wallet
-`./masari-wallet-rpc --rpc-bind-port 11182 --disable-rpc-login --wallet-file funding --password "your_wallet_password"`
+`./masari-wallet-rpc --rpc-bind-port 11182 --disable-rpc-login --generate-from-json wallet.json`
 
 ```
 git clone https://github.com/masari-project/masari-funding-system.git
