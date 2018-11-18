@@ -33,6 +33,7 @@ def after_request(res):
         res.headers['Pragma'] = 'no-cache'
         res.headers['Expires'] = '0'
         res.headers['Cache-Control'] = 'public, max-age=0'
+    db_session.remove()
     return res
 
 @app.teardown_appcontext
