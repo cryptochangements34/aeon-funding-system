@@ -39,7 +39,7 @@ RPC_LOCATION = "http://{host}:{rpc_port}/json_rpc".format(host=RPC_HOST, rpc_por
 RPC_USERNAME = os.environ.get('RPC_USERNAME', '')
 RPC_PASSWORD = os.environ.get('RPC_PASSWORD', '')
 
-FUNDING_CATEGORIES = os.environ.get('REDIS_HOST', 'wallets|marketing|core|misc|design').split('|')
+FUNDING_CATEGORIES = os.environ.get('FUNDING_CATEGORIES', 'wallets|marketing|core|misc|design').split('|')
 
 FUNDING_STATUSES = collections.OrderedDict()
 FUNDING_STATUSES[0] = 'disabled'
